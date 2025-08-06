@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <!-- Hardcoded event URLs -->
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/tech-conference-2025/</loc>
+        <lastmod>2024-07-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/summer-music-festival/</loc>
+        <lastmod>2024-07-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/weekend-fitness-bootcamp/</loc>
+        <lastmod>2024-07-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/gourmet-cooking-workshop/</loc>
+        <lastmod>2024-07-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/modern-art-exhibition/</loc>
+        <lastmod>2024-07-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Hardcoded tag URLs -->
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/tags/technology/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/tags/music/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/tags/art/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/tags/business/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/events/tags/fitness/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>
