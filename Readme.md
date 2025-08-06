@@ -129,12 +129,24 @@ To set up email for verification and notifications:
    python waitress_server.py
    ```
    
+
    This will start a production-ready server at http://localhost:8000
 
-4. For deployment behind a proxy (recommended):
-   - Configure Nginx or Apache as a reverse proxy
-   - Set up SSL/TLS certificates for HTTPS
-   - Configure proper caching headers
+4. Deploying to Render:
+   - Go to https://render.com/ and sign up or log in.
+   - Create a new Web Service and connect your GitHub repository.
+   - Set the build command to:
+     ```
+     pip install -r requirements.txt; python manage.py collectstatic --noinput; python manage.py migrate
+     ```
+   - Set the start command to:
+     ```
+     python waitress_server.py
+     ```
+   - Add all environment variables from your `.env` file in the Render dashboard.
+   - After deployment, update `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS` in your Render environment variables to match your Render domain (e.g., `https://your-app.onrender.com`).
+   - Render will provide a public URL for your app.
+   - For custom domains, follow Render's documentation to set up SSL/TLS and domain mapping.
 
 ## Troubleshooting
 
