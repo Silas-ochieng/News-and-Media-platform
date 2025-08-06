@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.core.validators import MinLengthValidator
+from django.db.models import Count, Q
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
