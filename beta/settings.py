@@ -39,12 +39,13 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 if IS_PRODUCTION:
     DEBUG = False
 
-# Get allowed hosts from environment or use defaults
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1,0.0.0.0,localhost,news-and-media-beta-production.up.railway.app').split(',')
 
-# Add Railway domain automatically
-if 'RAILWAY_STATIC_URL' in os.environ:
-    ALLOWED_HOSTS.append('.railway.app')
+# Get allowed hosts from environment or use defaults (Render example domain)
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1,0.0.0.0,localhost,your-app.onrender.com').split(',')
+
+# Add Render domain automatically if RENDER_EXTERNAL_HOSTNAME is set
+if 'RENDER_EXTERNAL_HOSTNAME' in os.environ:
+    ALLOWED_HOSTS.append(os.environ['RENDER_EXTERNAL_HOSTNAME'])
 
 # For development, allow all hosts if DEBUG is True
 if DEBUG:
@@ -252,12 +253,10 @@ MESSAGE_TAGS = {
 
 # CSRF Settings - Needed for secure form submissions in production
 CSRF_TRUSTED_ORIGINS = [
-    'https://news-and-media-beta-production.up.railway.app',
-    'https://*.railway.app',
+    'https://your-app.onrender.com',
 ]
 
 # Get additional trusted origins from environment variable if defined
 if os.environ.get('CSRF_TRUSTED_ORIGINS'):
-    # First convert to list, then extend the CSRF_TRUSTED_ORIGINS list
     additional_origins = os.environ.get('CSRF_TRUSTED_ORIGINS').split(',')
     CSRF_TRUSTED_ORIGINS.extend([origin.strip() for origin in additional_origins])
